@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ROLE_PROFILE = { admin: '/admin/profile', doctor: '/doctor/profile', patient: '/patient/profile' };
 
-export default function TopBar({ title, subtitle }) {
+export default function TopBar({ title, subtitle, onMenuToggle }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [showNotifs, setShowNotifs]   = useState(false);
@@ -34,7 +34,16 @@ export default function TopBar({ title, subtitle }) {
   const closeAll = () => { setShowNotifs(false); setShowUserMenu(false); };
 
   return (
-    <header className="h-14 border-b border-slate-100 bg-white flex items-center px-6 gap-4 sticky top-0 z-10 flex-shrink-0">
+    <header className="h-14 border-b border-slate-100 bg-white flex items-center px-4 md:px-6 gap-3 sticky top-0 z-10 flex-shrink-0">
+      {/* Mobile hamburger */}
+      <button
+        onClick={onMenuToggle}
+        className="md:hidden w-9 h-9 rounded-xl flex items-center justify-center text-slate-500 hover:bg-slate-100 transition-colors flex-shrink-0"
+        aria-label="Open menu"
+      >
+        <Icon name="menu" className="w-5 h-5" />
+      </button>
+
       {/* Title */}
       <div className="flex-1 min-w-0">
         {title    && <h1 className="text-base font-display text-slate-900 leading-tight truncate">{title}</h1>}
@@ -62,7 +71,7 @@ export default function TopBar({ title, subtitle }) {
           </button>
 
           {showNotifs && (
-            <div className="absolute right-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden z-20 animate-slide-up">
+            <div className="absolute right-0 mt-2 w-[calc(100vw-2rem)] max-w-sm md:w-80 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden z-20 animate-slide-up">
               <div className="px-4 py-3 border-b border-slate-100 flex items-center justify-between">
                 <span className="text-sm font-semibold text-slate-800">Notifications</span>
                 <span className="badge badge-blue">{unreadCount} new</span>
