@@ -160,7 +160,7 @@ export default function ProfileModule() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="First Name" hint="users.first_name">
               <input className="input" value={form.first_name} onChange={set('first_name')} placeholder="First name" />
             </Field>
@@ -169,7 +169,7 @@ export default function ProfileModule() {
             </Field>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Email Address" hint="users.email">
               <input type="email" className="input" value={form.email} onChange={set('email')} />
             </Field>
@@ -192,7 +192,7 @@ export default function ProfileModule() {
           {isDoctor && (
             <>
               <SectionTitle>Professional Details (doctors table)</SectionTitle>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field label="Registration Number" hint="doctors.registration_number">
                   <input className="input font-mono" value={form.registration_number} onChange={set('registration_number')} placeholder="MCI-DL-YYYY-0000" />
                 </Field>
@@ -200,7 +200,7 @@ export default function ProfileModule() {
                   <input className="input" value={form.specialization} onChange={set('specialization')} />
                 </Field>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field label="Qualification" hint="doctors.qualification">
                   <input className="input" value={form.qualification} onChange={set('qualification')} placeholder="MBBS, MD…" />
                 </Field>
@@ -208,7 +208,7 @@ export default function ProfileModule() {
                   <input type="number" step="0.5" className="input" value={form.experience_years} onChange={set('experience_years')} min="0" />
                 </Field>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field label="Consultation Fee (₹)" hint="doctors.consultation_fee">
                   <input type="number" className="input" value={form.consultation_fee} onChange={set('consultation_fee')} min="0" />
                 </Field>
@@ -216,7 +216,7 @@ export default function ProfileModule() {
                   <input type="number" className="input" value={form.followup_fee} onChange={set('followup_fee')} min="0" />
                 </Field>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field label="Slot Duration (min)" hint="doctors.slot_duration">
                   <input type="number" className="input" value={form.slot_duration} onChange={set('slot_duration')} min="5" step="5" />
                 </Field>
@@ -256,7 +256,7 @@ export default function ProfileModule() {
           {isPatient && (
             <>
               <SectionTitle>Patient Details (patients table)</SectionTitle>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <Field label="Date of Birth" hint="patients.date_of_birth NOT NULL">
                   <input type="date" className="input" value={form.date_of_birth} onChange={set('date_of_birth')} />
                 </Field>
@@ -284,7 +284,7 @@ export default function ProfileModule() {
               </Field>
 
               <SectionTitle>Emergency Contact (patients.emergency_contact_*)</SectionTitle>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <Field label="Contact Name">
                   <input className="input" value={form.emergency_contact_name} onChange={set('emergency_contact_name')} placeholder="Full name" />
                 </Field>
@@ -324,7 +324,7 @@ export default function ProfileModule() {
             <Field label="Current Password">
               <input type="password" className="input" value={pwForm.current} onChange={setPw('current')} placeholder="••••••••" />
             </Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="New Password">
                 <input type="password" className="input" value={pwForm.next} onChange={setPw('next')} placeholder="Min. 6 characters" />
               </Field>

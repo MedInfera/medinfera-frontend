@@ -255,7 +255,7 @@ function CreateOrderForm({ onClose, onDone }) {
 
   return (
     <FormModal title="New Lab Order" onClose={onClose} onSubmit={submit} loading={saving} submitLabel="Create Order" wide>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Patient *">
           <select className="input" value={form.patient_id} onChange={selectPatient}>
             <option value="">Select patient…</option>
@@ -399,7 +399,7 @@ function LabTestsTab() {
       )}
       {showForm && (
         <FormModal title={editing ? 'Edit Lab Test' : 'Add Lab Test'} onClose={() => { setShowForm(false); setEditing(null); }} onSubmit={submit} loading={saving} wide>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Test Name *"><input className="input" value={form.name} onChange={set('name')} /></Field>
             <Field label="Code"><input className="input" placeholder="e.g. CBC" value={form.code} onChange={set('code')} /></Field>
             <Field label="Category">
@@ -497,7 +497,7 @@ export default function LabOrdersModule({ role = 'admin' }) {
 
       {/* Stats */}
       {stats && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { label: 'Total Orders', value: stats.total,       cls: 'bg-brand-50 text-brand-500' },
             { label: 'Ordered',      value: stats.ordered,     cls: 'bg-amber-50 text-amber-500' },

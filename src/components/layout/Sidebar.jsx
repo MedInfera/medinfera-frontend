@@ -8,11 +8,7 @@ import Avatar from '../common/Avatar';
 function Logo({ collapsed }) {
   return (
     <div className="flex items-center gap-2.5 px-3 h-14">
-      <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center flex-shrink-0">
-        <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-          <path d="M12 4v16M4 12h16" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-        </svg>
-      </div>
+      <img src="/logo.png" alt="Medinfera" className="w-8 h-8 object-contain flex-shrink-0" />
       {!collapsed && (
         <div className="overflow-hidden">
           <div className="font-display text-lg text-slate-900 leading-none">Medinfera</div>
@@ -66,7 +62,7 @@ export default function Sidebar({ navGroups, mobileOpen, onMobileClose }) {
 
       <aside
         className={`
-          flex flex-col bg-white border-r border-slate-100 h-screen sticky top-0 transition-all duration-200 z-30
+          flex flex-col bg-white border-r border-slate-100 h-screen top-0 left-0 transition-all duration-200 z-30
           fixed md:relative
           ${mobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
           ${collapsed ? 'w-16' : 'w-64 md:w-60'}

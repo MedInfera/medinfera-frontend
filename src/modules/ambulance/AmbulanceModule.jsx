@@ -155,7 +155,7 @@ function CompleteTripForm({ trip, ambulance, onClose, onCompleted }) {
     <FormModal title={`Complete Trip — ${trip.trip_number}`} onClose={onClose} onSubmit={submit} loading={busy} submitLabel="Complete Trip">
       <div className="space-y-4">
         {err && <div className="text-red-600 text-sm bg-red-50 px-4 py-3 rounded-xl">{err}</div>}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Field label="Distance (km)" required><input type="number" step="0.1" className="input" value={form.distance_km} onChange={set('distance_km')} placeholder="0.0" min="0" /></Field>
           <Field label="Waiting (minutes)"><input type="number" className="input" value={form.waiting_minutes} onChange={set('waiting_minutes')} placeholder="0" min="0" /></Field>
         </div>

@@ -216,7 +216,7 @@ function PrescriptionBuilder({ onClose, onSaved, doctor_id: doctorId, doctorName
         {/* Vitals */}
         <div>
           <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Vitals (optional)</p>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { k: 'bp',     ph: 'BP (mmHg)'  },
               { k: 'pulse',  ph: 'Pulse (bpm)' },
@@ -286,7 +286,7 @@ function PrescriptionBuilder({ onClose, onSaved, doctor_id: doctorId, doctorName
         </Field>
 
         {/* Advice + Follow-up */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Field label="Advice / Instructions">
             <textarea className="input resize-none text-sm" rows={3} value={form.advice} onChange={setV('advice')} placeholder="Rest, diet restrictions, follow-up instructions…" />
           </Field>
@@ -306,7 +306,7 @@ function PrescriptionViewer({ rx, onClose }) {
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4 animate-fade-in" onClick={onClose}>
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto animate-slide-up" onClick={(e) => e.stopPropagation()}>
         {/* Print header */}
-        <div className="bg-brand-600 px-8 py-6 text-white">
+        <div className="bg-brand-600 px-4 sm:px-8 py-6 text-white">
           <div className="flex items-center justify-between">
             <div>
               <div className="font-display text-2xl">Medinfera General Hospital</div>
@@ -322,7 +322,7 @@ function PrescriptionViewer({ rx, onClose }) {
         </div>
 
         {/* Patient + Doctor info */}
-        <div className="grid grid-cols-2 gap-6 px-8 py-5 border-b border-slate-100 bg-slate-50">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 px-4 sm:px-8 py-5 border-b border-slate-100 bg-slate-50">
           <div>
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Patient</p>
             <div className="flex items-center gap-2 mb-1">
@@ -351,7 +351,7 @@ function PrescriptionViewer({ rx, onClose }) {
         </div>
 
         {/* Diagnosis */}
-        <div className="px-8 pt-5">
+        <div className="px-4 sm:px-8 pt-5">
           <div className="bg-brand-50 rounded-xl px-4 py-3 mb-5">
             <span className="text-xs font-semibold text-brand-500 uppercase tracking-wider">Diagnosis: </span>
             <span className="text-sm font-medium text-slate-800">{rx.diagnosis}</span>
@@ -411,7 +411,7 @@ function PrescriptionViewer({ rx, onClose }) {
         </div>
 
         {/* Footer */}
-        <div className="px-8 py-4 border-t border-slate-100 flex justify-end gap-3">
+        <div className="px-4 sm:px-8 py-4 border-t border-slate-100 flex justify-end gap-3">
           <button onClick={onClose} className="btn-secondary">Close</button>
           <button onClick={() => window.print()} className="btn-primary gap-2">
             <Icon name="prescription" className="w-4 h-4" /> Print / Download

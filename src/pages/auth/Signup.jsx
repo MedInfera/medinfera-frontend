@@ -129,11 +129,7 @@ export default function Signup() {
         {/* Header */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-6">
-            <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="none" className="w-4.5 h-4.5">
-                <path d="M12 4v16M4 12h16" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-              </svg>
-            </div>
+            <img src="/logo.png" alt="Medinfera" className="w-8 h-8 object-contain" />
             <span className="font-display text-xl text-slate-900">Medinfera</span>
           </Link>
           <h1 className="font-display text-3xl text-slate-900 mb-1">Create your account</h1>
@@ -165,7 +161,7 @@ export default function Signup() {
                 {/* ── users table fields ── */}
                 <SectionTitle>Personal Information (users table)</SectionTitle>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="label">First Name <span className="text-red-500">*</span></label>
                     <input className="input" value={form.first_name} onChange={set('first_name')} placeholder="First name" required />
@@ -176,7 +172,7 @@ export default function Signup() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="label">Email</label>
                     <input type="email" className="input" value={form.email} onChange={set('email')} placeholder="you@email.com" autoComplete="email" />
@@ -202,7 +198,7 @@ export default function Signup() {
                 {/* ── patients table fields ── */}
                 <SectionTitle>Patient Details (patients table)</SectionTitle>
 
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div>
                     <label className="label">Date of Birth <span className="text-red-500">*</span></label>
                     <input type="date" className="input" value={form.date_of_birth} onChange={set('date_of_birth')} required />
@@ -282,7 +278,7 @@ export default function Signup() {
                 {/* ── patients.emergency_contact_* ── */}
                 <SectionTitle>Emergency Contact (patients.emergency_contact_*)</SectionTitle>
 
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
                     <label className="label">Contact Name</label>
                     <input className="input" value={form.emergency_contact_name} onChange={set('emergency_contact_name')} placeholder="Full name" />

@@ -52,7 +52,7 @@ function AppointmentDrawer({ appt, onClose, onAction }) {
           <button onClick={onClose} className="text-slate-400 hover:text-slate-700"><Icon name="close" className="w-5 h-5" /></button>
         </div>
         <div className="p-6 space-y-5">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[['PATIENT', N.patientName(appt)], ['DOCTOR', N.doctorName(appt)]].map(([lbl, nm]) => (
               <div key={lbl} className="bg-slate-50 rounded-xl p-4">
                 <p className="text-xs text-slate-400 font-semibold mb-2 uppercase tracking-wider">{lbl}</p>
@@ -216,7 +216,7 @@ function NewAppointmentForm({ onClose, onCreated }) {
           <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 pb-2 border-b border-slate-100">Schedule</div>
           <div className="space-y-4">
             <Field label="Appointment Date" required><input type="date" className="input" value={form.appointment_date} onChange={set('appointment_date')} min="2026-01-01" /></Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Start Time" required>
                 <select className="input" value={form.start_time} onChange={set('start_time')}>
                   <option value="">Select slot…</option>
@@ -256,7 +256,7 @@ function NewAppointmentForm({ onClose, onCreated }) {
           <div className="space-y-4">
             <Field label="Chief Complaint"><textarea className="input resize-none" rows={2} value={form.chief_complaint} onChange={set('chief_complaint')} placeholder="Primary reason for visit" /></Field>
             <Field label="Symptoms" hint="Comma-separated"><input className="input" value={form.symptoms} onChange={set('symptoms')} placeholder="headache, fever, nausea" /></Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Consultation Fee (₹)"><input type="number" className="input" value={form.consultation_fee} onChange={set('consultation_fee')} placeholder="0" min="0" /></Field>
               <div className="flex items-end pb-1">
                 <label className="flex items-center gap-2 cursor-pointer">

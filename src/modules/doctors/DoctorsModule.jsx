@@ -363,7 +363,7 @@ function DoctorForm({ initial, onClose, onSaved }) {
         <div>
           <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 pb-2 border-b border-slate-100">Personal Information</div>
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="First Name" required>
                 <input className="input" value={form.first_name} onChange={set('first_name')} placeholder="First name" />
               </Field>
@@ -371,7 +371,7 @@ function DoctorForm({ initial, onClose, onSaved }) {
                 <input className="input" value={form.last_name} onChange={set('last_name')} placeholder="Last name" />
               </Field>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Gender">
                 <select className="input" value={form.gender} onChange={set('gender')}>
                   {['MALE','FEMALE','OTHER'].map((g) => <option key={g} value={g}>{g.charAt(0) + g.slice(1).toLowerCase()}</option>)}
@@ -381,7 +381,7 @@ function DoctorForm({ initial, onClose, onSaved }) {
                 <input type="date" className="input" value={form.date_of_birth} onChange={set('date_of_birth')} />
               </Field>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Email Address" required>
                 <input type="email" className="input" value={form.email} onChange={set('email')} placeholder="doctor@hospital.com" />
               </Field>
@@ -416,7 +416,7 @@ function DoctorForm({ initial, onClose, onSaved }) {
         <div>
           <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 pb-2 border-b border-slate-100">Professional Credentials</div>
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Specialization" required>
                 <select className="input" value={form.specialization} onChange={set('specialization')}>
                   <option value="">Select specialization…</option>
@@ -427,7 +427,7 @@ function DoctorForm({ initial, onClose, onSaved }) {
                 <input className="input" value={form.qualification} onChange={set('qualification')} placeholder="MBBS, MD…" />
               </Field>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Registration Number" required hint="doctors.registration_number — MCI / State Council">
                 <input className="input font-mono" value={form.registration_number} onChange={set('registration_number')} placeholder="MCI-DL-YYYY-0000" />
               </Field>
@@ -435,7 +435,7 @@ function DoctorForm({ initial, onClose, onSaved }) {
                 <input type="number" step="0.5" className="input" value={form.experience_years} onChange={set('experience_years')} min="0" placeholder="0" />
               </Field>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Designation" hint="Display title — not in schema column, display only">
                 <input className="input" value={form.designation} onChange={set('designation')} placeholder="e.g. Senior Cardiologist" />
               </Field>
@@ -453,7 +453,7 @@ function DoctorForm({ initial, onClose, onSaved }) {
         <div>
           <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 pb-2 border-b border-slate-100">Consultation Settings</div>
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Consultation Fee (₹)" hint="doctors.consultation_fee">
                 <input type="number" className="input" value={form.consultation_fee} onChange={set('consultation_fee')} min="0" placeholder="0" />
               </Field>
@@ -461,7 +461,7 @@ function DoctorForm({ initial, onClose, onSaved }) {
                 <input type="number" className="input" value={form.followup_fee} onChange={set('followup_fee')} min="0" placeholder="0" />
               </Field>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Slot Duration (min)" hint="doctors.slot_duration — DEFAULT 15">
                 <input type="number" className="input" value={form.slot_duration} onChange={set('slot_duration')} min="5" step="5" placeholder="30" />
               </Field>
@@ -637,7 +637,7 @@ export default function DoctorsModule() {
       <>{/* Doctors content start */}
       {/* Quick stats */}
       {stats && (
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
             { label: 'Total',    value: stats.total,    bg: 'bg-slate-100',   text: 'text-slate-700' },
             { label: 'Active',   value: stats.active,   bg: 'bg-teal-50',     text: 'text-teal-700'  },

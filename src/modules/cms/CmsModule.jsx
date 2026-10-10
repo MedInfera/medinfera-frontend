@@ -109,11 +109,11 @@ function SlidersSection() {
           <div className="space-y-4">
             <Field label="Title" required><input className="input" value={form.title} onChange={set('title')} placeholder="Hero headline" /></Field>
             <Field label="Subtitle"><input className="input" value={form.subtitle} onChange={set('subtitle')} placeholder="Supporting text" /></Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Button Text"><input className="input" value={form.buttonText} onChange={set('buttonText')} /></Field>
               <Field label="Link URL"><input className="input" value={form.link} onChange={set('link')} /></Field>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Order"><input type="number" className="input" value={form.order} onChange={set('order')} min="1" /></Field>
               <Field label="Status"><select className="input" value={form.status} onChange={set('status')}><option value="active">Active</option><option value="inactive">Inactive</option></select></Field>
             </div>
@@ -164,7 +164,7 @@ function ServicesSection() {
       {showForm && (
         <FormModal title={editing ? 'Edit Service' : 'New Service'} onClose={() => setShowForm(false)} onSubmit={submit} loading={saving}>
           <div className="space-y-4">
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <Field label="Icon (emoji)"><input className="input text-2xl" value={form.icon} onChange={set('icon')} /></Field>
               <div className="col-span-3"><Field label="Title" required><input className="input" value={form.title} onChange={set('title')} /></Field></div>
             </div>
@@ -220,7 +220,7 @@ function NewsSection() {
           <div className="space-y-4">
             <Field label="Title" required><input className="input" value={form.title} onChange={set('title')} /></Field>
             <Field label="Excerpt"><textarea className="input resize-none" rows={3} value={form.excerpt} onChange={set('excerpt')} /></Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Category"><select className="input" value={form.category} onChange={set('category')}>{NEWS_CATEGORIES.map((c) => <option key={c}>{c}</option>)}</select></Field>
               <Field label="Date"><input type="date" className="input" value={form.date} onChange={set('date')} /></Field>
             </div>
@@ -273,7 +273,7 @@ function FaqsSection() {
           <div className="space-y-4">
             <Field label="Question" required><input className="input" value={form.question} onChange={set('question')} /></Field>
             <Field label="Answer" required><textarea className="input resize-none" rows={4} value={form.answer} onChange={set('answer')} /></Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Category"><select className="input" value={form.category} onChange={set('category')}>{['General','Appointments','Billing','Emergency'].map((c) => <option key={c}>{c}</option>)}</select></Field>
               <Field label="Order"><input type="number" className="input" value={form.order} onChange={set('order')} min="1" /></Field>
             </div>
@@ -324,12 +324,12 @@ function TestimonialsSection() {
       {showForm && (
         <FormModal title={editing ? 'Edit Testimonial' : 'New Testimonial'} onClose={() => setShowForm(false)} onSubmit={submit} loading={saving}>
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Name" required><input className="input" value={form.name} onChange={set('name')} /></Field>
               <Field label="Role"><input className="input" value={form.role} onChange={set('role')} /></Field>
             </div>
             <Field label="Content"><textarea className="input resize-none" rows={3} value={form.content} onChange={set('content')} /></Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Rating (1–5)"><select className="input" value={form.rating} onChange={set('rating')}>{[1,2,3,4,5].map((r) => <option key={r} value={r}>{r} ★</option>)}</select></Field>
               <Field label="Status"><select className="input" value={form.status} onChange={set('status')}><option value="active">Active</option><option value="inactive">Inactive</option></select></Field>
             </div>

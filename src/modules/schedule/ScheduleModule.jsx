@@ -85,14 +85,14 @@ export default function ScheduleModule() {
                   <div
                     key={day}
                     onClick={() => setSelectedDay(day)}
-                    className={`flex items-center gap-4 p-3.5 rounded-xl border-2 cursor-pointer transition-all ${isSelected ? 'border-brand-500 bg-brand-50' : 'border-slate-100 hover:border-slate-200 bg-white'}`}
+                    className={`flex items-center gap-2 sm:gap-4 p-3.5 rounded-xl border-2 cursor-pointer transition-all ${isSelected ? 'border-brand-500 bg-brand-50' : 'border-slate-100 hover:border-slate-200 bg-white'}`}
                   >
-                    <div className="w-24 flex-shrink-0">
+                    <div className="w-20 sm:w-24 flex-shrink-0">
                       <span className={`text-sm font-semibold ${isSelected ? 'text-brand-700' : 'text-slate-700'}`}>{day}</span>
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       {d.active ? (
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                           <span className="text-xs text-slate-500">{d.start} – {d.end}</span>
                           <span className="badge badge-blue">{d.slots} slots</span>
                         </div>
@@ -116,7 +116,7 @@ export default function ScheduleModule() {
           {dayData.active && (
             <div className="card animate-slide-up">
               <h3 className="font-display text-base text-slate-900 mb-4">{selectedDay} — Settings</h3>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <label className="label">Start Time</label>
                   <input type="time" className="input" value={dayData.start} onChange={(e) => setField(selectedDay, 'start', e.target.value)} />

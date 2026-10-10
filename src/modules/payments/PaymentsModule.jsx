@@ -101,7 +101,7 @@ export default function PaymentsModule({ role = 'admin', patientId }) {
 
       {/* Summary cards */}
       {summary && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { label: 'Total Revenue',      value: `₹${((summary.total_revenue || summary.totalRevenue || 0) / 1000).toFixed(0)}K`,    icon: 'chart',   bg: 'bg-teal-50',   ic: 'text-teal-500'  },
             { label: 'Pending Payments',   value: `₹${((summary.pending_amount || summary.pendingAmount || 0) / 1000).toFixed(0)}K`,  icon: 'bell',    bg: 'bg-amber-50',  ic: 'text-amber-500' },

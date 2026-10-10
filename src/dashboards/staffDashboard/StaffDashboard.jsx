@@ -119,7 +119,7 @@ function StaffRegistrationForm({ initial, onClose, onSaved }) {
             Personal Information <span className="text-slate-300 font-normal">(users table)</span>
           </div>
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="First Name" required hint="users.first_name">
                 <input className="input" value={form.first_name} onChange={set('first_name')} placeholder="First name" />
               </Field>
@@ -127,7 +127,7 @@ function StaffRegistrationForm({ initial, onClose, onSaved }) {
                 <input className="input" value={form.last_name} onChange={set('last_name')} placeholder="Last name" />
               </Field>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Email Address" hint="users.email">
                 <input type="email" className="input" value={form.email} onChange={set('email')} placeholder="staff@hospital.com" />
               </Field>
@@ -138,7 +138,7 @@ function StaffRegistrationForm({ initial, onClose, onSaved }) {
             <Field label="Alternate Phone" hint="users.alternate_phone">
               <input className="input" value={form.alternate_phone} onChange={set('alternate_phone')} placeholder="+91 98100 00000 (optional)" />
             </Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Preferred Language" hint="users.preferred_language DEFAULT 'en'">
                 <select className="input" value={form.preferred_language} onChange={set('preferred_language')}>
                   {LANGUAGE_OPTIONS.map((l) => <option key={l.value} value={l.value}>{l.label}</option>)}
@@ -213,7 +213,7 @@ function StaffDirectoryPage({ showForm = false }) {
         action={<button className="btn-primary btn-sm gap-1.5" onClick={() => { setEditing(null); setFormOpen(true); }}><Icon name="plus" className="w-4 h-4"/>Register Staff</button>}
       />
       {stats && (
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
             { label: 'Total Staff', value: stats.total,    bg: 'bg-slate-100',  text: 'text-slate-700' },
             { label: 'Active',      value: stats.active,   bg: 'bg-teal-50',    text: 'text-teal-700'  },
@@ -299,7 +299,7 @@ function StaffHome() {
 
   return (
     <div className="space-y-6 page-enter">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
           <h2 className="font-display text-2xl text-slate-900">Welcome, {user?.name?.split(' ')[0]}</h2>
           <p className="text-slate-500 text-sm mt-1">{user?.designation || 'Staff Member'}</p>

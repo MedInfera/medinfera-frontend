@@ -58,7 +58,7 @@ function SupplierForm({ supplier, onClose, onDone }) {
 
   return (
     <FormModal title={supplier ? 'Edit Supplier' : 'Add Supplier'} onClose={onClose} onSubmit={submit} loading={saving} wide>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Supplier Name *"><input className="input" value={form.name} onChange={set('name')} /></Field>
         <Field label="Contact Person"><input className="input" value={form.contact_person} onChange={set('contact_person')} /></Field>
         <Field label="Phone"><input className="input" value={form.phone} onChange={set('phone')} /></Field>
@@ -224,7 +224,7 @@ function CreatePoForm({ suppliers, onClose, onDone }) {
 
   return (
     <FormModal title="New Purchase Order" onClose={onClose} onSubmit={submit} loading={saving} submitLabel="Create PO" wide>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Supplier *">
           <select className="input" value={form.supplier_id} onChange={set('supplier_id')}>
             <option value="">Select supplier…</option>

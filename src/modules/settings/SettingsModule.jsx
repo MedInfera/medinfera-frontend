@@ -51,7 +51,7 @@ function SiteSettings({ show }) {
   const save = async () => { setSaving(true); await new Promise(r => setTimeout(r, 700)); setSaving(false); show('Site settings saved'); };
   return (
     <SettingsSection title="Site Identity" desc="Hospital name, contact info, and branding" onSave={save} saving={saving}>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Hospital Name"><input className="input" value={form.name} onChange={set('name')} /></Field>
         <Field label="Email"><input type="email" className="input" value={form.email} onChange={set('email')} /></Field>
         <Field label="Phone"><input className="input" value={form.phone} onChange={set('phone')} /></Field>
@@ -81,7 +81,7 @@ function SmtpSettings({ show }) {
   const test = async () => { setTesting(true); await new Promise(r => setTimeout(r, 1200)); setTesting(false); show('Test email sent successfully', 'success'); };
   return (
     <SettingsSection title="Email / SMTP" desc="Configure outgoing email server" onSave={save} saving={saving}>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="SMTP Host"><input className="input" value={form.host} onChange={set('host')} placeholder="smtp.gmail.com" /></Field>
         <Field label="Port"><input className="input" value={form.port} onChange={set('port')} placeholder="587" /></Field>
         <Field label="Username"><input className="input" value={form.username} onChange={set('username')} /></Field>
@@ -106,7 +106,7 @@ function ZoomSettings({ show }) {
   const save = async () => { setSaving(true); await new Promise(r => setTimeout(r, 700)); setSaving(false); show('Zoom credentials saved'); };
   return (
     <SettingsSection title="Zoom / Telemedicine" desc="Credentials for online appointment video calls" onSave={save} saving={saving}>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="API Key" hint="From Zoom Developer Console"><input className="input font-mono text-xs" value={form.apiKey} onChange={set('apiKey')} /></Field>
         <Field label="API Secret"><input type="password" className="input font-mono text-xs" value={form.apiSecret} onChange={set('apiSecret')} placeholder="••••••••••••" /></Field>
         <Field label="SDK Key"><input className="input font-mono text-xs" value={form.sdkKey} onChange={set('sdkKey')} /></Field>
@@ -144,7 +144,7 @@ function PaymentSettings({ show }) {
             onChange={() => toggle(key)}
           />
           {gateways[key].enabled && hasKey && (
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <input className="input text-xs font-mono" value={gateways[key].key} onChange={setKey(key, 'key')} placeholder="API Key / Client ID" />
               <input type="password" className="input text-xs font-mono" value={gateways[key].secret} onChange={setKey(key, 'secret')} placeholder="Secret Key" />
             </div>

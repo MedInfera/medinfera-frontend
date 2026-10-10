@@ -95,7 +95,7 @@ function AllocateForm({ bed, onClose, onDone }) {
                 {doctors.filter((d) => d.is_active !== false).map((d) => <option key={d.id} value={d.id}>{d.name} — {d.specialization}</option>)}
               </select>
             </Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Admission Date & Time">
                 <input type="datetime-local" className="input" value={form.admission_datetime} onChange={set('admission_datetime')} />
               </Field>
@@ -109,7 +109,7 @@ function AllocateForm({ bed, onClose, onDone }) {
             <Field label="Treatment Plan">
               <textarea className="input resize-none" rows={2} value={form.treatment_plan} onChange={set('treatment_plan')} placeholder="e.g. Thrombolysis, PCI, anticoagulation therapy" />
             </Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Daily Charge Applicable (₹)">
                 <input type="number" className="input" value={form.daily_charge_applicable} onChange={set('daily_charge_applicable')} min="0" />
               </Field>

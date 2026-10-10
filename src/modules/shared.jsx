@@ -7,8 +7,8 @@ import Icon from '../components/common/Icon';
 // ── Page Header ───────────────────────────────────────────────────────────────
 export function PageHeader({ title, subtitle, action }) {
   return (
-    <div className="flex items-start justify-between gap-4 mb-6">
-      <div>
+    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+      <div className="min-w-0">
         <h2 className="font-display text-2xl text-slate-900">{title}</h2>
         {subtitle && <p className="text-slate-500 text-sm mt-1">{subtitle}</p>}
       </div>
@@ -156,7 +156,7 @@ export function Toast({ message, type = 'success', onClose }) {
   }[type] || { bg: 'bg-teal-600', icon: 'check' };
 
   return (
-    <div className={`fixed bottom-6 right-6 z-[100] flex items-center gap-3 ${cfg.bg} text-white px-5 py-3 rounded-2xl shadow-xl animate-slide-up`}>
+    <div className={`fixed bottom-6 right-4 sm:right-6 left-4 sm:left-auto z-[100] flex items-center gap-3 ${cfg.bg} text-white px-5 py-3 rounded-2xl shadow-xl animate-slide-up`}>
       <Icon name={cfg.icon} className="w-4 h-4 flex-shrink-0" />
       <span className="text-sm font-medium">{message}</span>
       <button onClick={onClose} className="ml-2 opacity-70 hover:opacity-100">

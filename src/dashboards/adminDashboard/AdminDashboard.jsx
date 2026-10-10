@@ -147,7 +147,7 @@ function AdminHome() {
       </div>
 
       {/* Secondary KPIs */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
           { label: 'Pending Approval', value: stats.pendingAppointments, icon: 'calendar', bg: 'bg-amber-50', ic: 'text-amber-500', to: '/admin/appointments' },
           { label: 'Total Doctors',    value: stats.totalDoctors,        icon: 'doctor',   bg: 'bg-brand-50', ic: 'text-brand-500', to: '/admin/doctors'      },
@@ -265,7 +265,7 @@ function AdminHome() {
             </div>
 
             {/* Summary row */}
-            <div className="grid grid-cols-4 gap-2 mb-5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5">
               {[
                 { label: 'Available',   value: beds.available,   color: 'text-teal-600',  bg: 'bg-teal-50'  },
                 { label: 'Occupied',    value: beds.occupied,    color: 'text-red-600',   bg: 'bg-red-50'   },

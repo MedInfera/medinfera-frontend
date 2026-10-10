@@ -113,7 +113,7 @@ function PharmacistRegistrationForm({ initial, onClose, onSaved }) {
             Personal Information <span className="text-slate-300 font-normal">(users table)</span>
           </div>
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="First Name" required hint="users.first_name">
                 <input className="input" value={form.first_name} onChange={set('first_name')} placeholder="First name" />
               </Field>
@@ -121,7 +121,7 @@ function PharmacistRegistrationForm({ initial, onClose, onSaved }) {
                 <input className="input" value={form.last_name} onChange={set('last_name')} placeholder="Last name" />
               </Field>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Email Address" hint="users.email">
                 <input type="email" className="input" value={form.email} onChange={set('email')} placeholder="pharmacist@hospital.com" />
               </Field>
@@ -132,7 +132,7 @@ function PharmacistRegistrationForm({ initial, onClose, onSaved }) {
             <Field label="Alternate Phone" hint="users.alternate_phone">
               <input className="input" value={form.alternate_phone} onChange={set('alternate_phone')} placeholder="+91 98120 00000 (optional)" />
             </Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Preferred Language" hint="users.preferred_language DEFAULT 'en'">
                 <select className="input" value={form.preferred_language} onChange={set('preferred_language')}>
                   {LANGUAGE_OPTIONS.map((l) => <option key={l.value} value={l.value}>{l.label}</option>)}
@@ -347,7 +347,7 @@ function PharmacistHome() {
             <Icon name="bell" className="w-5 h-5 text-amber-600" />
             <span className="font-semibold text-amber-800">Inventory Alerts</span>
           </div>
-          <div className="grid grid-cols-4 gap-3 text-center text-sm">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-sm">
             {[
               { label: 'Low Stock',     value: stats.lowStock,    color: 'text-amber-700' },
               { label: 'Critical',      value: stats.critical,    color: 'text-red-600'   },
@@ -363,7 +363,7 @@ function PharmacistHome() {
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {[
           { label: 'View Inventory',     icon: 'lab',         to: '/pharmacist/inventory',  color: 'bg-brand-50 text-brand-700'   },
           { label: 'Dispensing Log',     icon: 'prescription',to: '/pharmacist/dispensing', color: 'bg-teal-50 text-teal-700'     },

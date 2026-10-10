@@ -257,7 +257,7 @@ function PatientForm({ initial, onClose, onSaved }) {
             Personal Information <span className="text-slate-300 font-normal">(users table)</span>
           </div>
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="First Name" required hint="users.first_name">
                 <input className="input" value={form.first_name} onChange={set('first_name')} placeholder="First name" />
               </Field>
@@ -265,7 +265,7 @@ function PatientForm({ initial, onClose, onSaved }) {
                 <input className="input" value={form.last_name} onChange={set('last_name')} placeholder="Last name" />
               </Field>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Email Address" hint="users.email">
                 <input type="email" className="input" value={form.email} onChange={set('email')} placeholder="patient@email.com" />
               </Field>
@@ -285,7 +285,7 @@ function PatientForm({ initial, onClose, onSaved }) {
             Patient Details <span className="text-slate-300 font-normal">(patients table)</span>
           </div>
           <div className="space-y-4">
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <Field label="Date of Birth" required hint="patients.date_of_birth NOT NULL">
                 <input type="date" className="input" value={form.date_of_birth} onChange={set('date_of_birth')} />
               </Field>
@@ -308,7 +308,7 @@ function PatientForm({ initial, onClose, onSaved }) {
           <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 pb-2 border-b border-slate-100">
             Emergency Contact <span className="text-slate-300 font-normal">(patients.emergency_contact_*)</span>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Field label="Contact Name" hint="emergency_contact_name">
               <input className="input" value={form.emergency_contact_name} onChange={set('emergency_contact_name')} placeholder="Full name" />
             </Field>

@@ -149,7 +149,7 @@ function VitalsTab({ admissionId, patientId }) {
 
       {showForm && (
         <FormModal title="Record Vital Signs" onClose={() => setShowForm(false)} onSubmit={submit} loading={saving} submitLabel="Save Vitals">
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <Field label="BP Systolic"><input className="input" type="number" placeholder="e.g. 120" value={form.bp_systolic} onChange={set('bp_systolic')} /></Field>
             <Field label="BP Diastolic"><input className="input" type="number" placeholder="e.g. 80" value={form.bp_diastolic} onChange={set('bp_diastolic')} /></Field>
             <Field label="Heart Rate (bpm)"><input className="input" type="number" placeholder="e.g. 72" value={form.heart_rate} onChange={set('heart_rate')} /></Field>
@@ -417,7 +417,7 @@ function AdmitForm({ onClose, onDone }) {
 
   return (
     <FormModal title="Admit Patient" onClose={onClose} onSubmit={submit} loading={saving} submitLabel="Admit Patient" wide>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Patient *">
           <select className="input" value={form.patient_id} onChange={selectPatient}>
             <option value="">Select patient…</option>
@@ -567,7 +567,7 @@ export default function IpdModule() {
 
       {/* Stats row */}
       {stats && (
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {[
             { label: 'Total Admitted', value: stats.total,     bg: 'bg-brand-50',  ic: 'text-brand-500'  },
             { label: 'Active',         value: stats.active,    bg: 'bg-teal-50',   ic: 'text-teal-500'   },

@@ -59,9 +59,7 @@ export default function Login() {
         </div>
         <div className="relative">
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-brand-600 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5"><path d="M12 4v16M4 12h16" stroke="white" strokeWidth="2.5" strokeLinecap="round"/></svg>
-            </div>
+            <img src="/logo.png" alt="Medinfera" className="w-9 h-9 object-contain" />
             <span className="font-display text-xl text-white">Medinfera</span>
           </Link>
         </div>
@@ -83,9 +81,7 @@ export default function Login() {
       <div className="flex-1 flex items-center justify-center p-6">
         <div className="w-full max-w-md animate-slide-up">
           <Link to="/" className="lg:hidden flex items-center gap-2 mb-10">
-            <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="none" className="w-4.5 h-4.5"><path d="M12 4v16M4 12h16" stroke="white" strokeWidth="2.5" strokeLinecap="round"/></svg>
-            </div>
+            <img src="/logo.png" alt="Medinfera" className="w-8 h-8 object-contain" />
             <span className="font-display text-xl text-slate-900">Medinfera</span>
           </Link>
 

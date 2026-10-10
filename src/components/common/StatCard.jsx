@@ -27,7 +27,7 @@ export default function StatCard({ label, value, icon, trend, trendLabel, color 
       <div className="stat-value">{typeof value === 'number' ? value.toLocaleString('en-IN') : value}</div>
 
       {trend !== undefined && (
-        <div className="flex items-center gap-1.5 text-xs">
+        <div className="flex flex-wrap items-center gap-x-1.5 text-xs">
           <span className={trend >= 0 ? 'text-teal-600 font-medium' : 'text-red-500 font-medium'}>
             {trend >= 0 ? '↑' : '↓'} {Math.abs(trend)}%
           </span>

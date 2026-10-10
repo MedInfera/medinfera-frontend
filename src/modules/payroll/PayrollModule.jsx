@@ -110,7 +110,7 @@ function EditPayrollForm({ payroll, onClose, onDone }) {
 
   return (
     <FormModal title={`Edit Payroll — ${payroll.user_name}`} onClose={onClose} onSubmit={submit} loading={saving}>
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <Field label="Basic Salary (₹)"><input className="input" type="number" value={form.basic_salary} onChange={set('basic_salary')} /></Field>
         <Field label="Allowances (₹)"><input className="input" type="number" value={form.allowances} onChange={set('allowances')} /></Field>
         <Field label="Deductions (₹)"><input className="input" type="number" value={form.deductions} onChange={set('deductions')} /></Field>
@@ -150,14 +150,14 @@ function CreatePayrollForm({ onClose, onDone }) {
 
   return (
     <FormModal title="Add Payroll Record" onClose={onClose} onSubmit={submit} loading={saving} wide>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Staff Member *">
           <select className="input" value={form.user_id} onChange={set('user_id')}>
             <option value="">Select staff…</option>
             {staffUsers.map(u => <option key={u.user_id} value={u.user_id}>{u.name} ({u.role})</option>)}
           </select>
         </Field>
-        <div className="grid grid-cols-2 gap-2 col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 col-span-1">
           <Field label="Month">
             <select className="input" value={form.month} onChange={set('month')}>
               {MONTHS.map(m => <option key={m.value} value={m.value}>{m.label}</option>)}
@@ -247,7 +247,7 @@ function PayoutsTab() {
       )}
       {showForm && (
         <FormModal title="Add Payout" onClose={() => setShowForm(false)} onSubmit={submit} loading={saving}>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Staff Member *">
               <select className="input" value={form.user_id} onChange={set('user_id')}>
                 <option value="">Select staff…</option>

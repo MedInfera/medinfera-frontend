@@ -93,11 +93,7 @@ export default function Landing() {
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
-                <path d="M12 4v16M4 12h16" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-              </svg>
-            </div>
+            <img src="/logo.png" alt="Medinfera" className="w-8 h-8 object-contain" />
             <span className="font-display text-xl text-slate-900">Medinfera</span>
           </div>
           <div className="flex items-center gap-3">
@@ -242,11 +238,7 @@ export default function Landing() {
       <footer className="bg-white border-t border-slate-100 py-10">
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-6 h-6 rounded-lg bg-brand-600 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
-                <path d="M12 4v16M4 12h16" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
-              </svg>
-            </div>
+            <img src="/logo.png" alt="Medinfera" className="w-6 h-6 object-contain" />
             <span className="font-display text-slate-700">Medinfera Health Platform</span>
           </div>
           <p className="text-xs text-slate-400">© 2026 Medinfera · Hospital ERP · All data pre-loaded for evaluation</p>

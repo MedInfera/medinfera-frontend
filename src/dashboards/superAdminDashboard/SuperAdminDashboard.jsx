@@ -73,7 +73,7 @@ function HospitalForm({ initial, onClose, onSaved }) {
             <Field label="Hospital Name" required>
               <input className="input" value={form.name} onChange={set('name')} placeholder="e.g. City General Hospital" />
             </Field>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Field label="Official Email" required>
                 <input type="email" className="input" value={form.email} onChange={set('email')} placeholder="info@hospital.com" />
               </Field>
@@ -84,7 +84,7 @@ function HospitalForm({ initial, onClose, onSaved }) {
             <Field label="Street Address">
               <input className="input" value={form.address} onChange={set('address')} placeholder="Street address" />
             </Field>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <Field label="City"><input className="input" value={form.city} onChange={set('city')} placeholder="City" /></Field>
               <Field label="State"><input className="input" value={form.state} onChange={set('state')} placeholder="State" /></Field>
               <Field label="ZIP Code"><input className="input" value={form.zip_code} onChange={set('zip_code')} placeholder="000000" /></Field>
@@ -94,7 +94,7 @@ function HospitalForm({ initial, onClose, onSaved }) {
 
         <div>
           <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 pb-2 border-b border-slate-100">Hospital Administrator</div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Admin Full Name" required>
               <input className="input" value={form.admin_name} onChange={set('admin_name')} placeholder="Full name" />
             </Field>
@@ -136,7 +136,7 @@ function HospitalCard({ hospital, onEdit, onToggle }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-2 mb-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
         {[
           { label: 'Beds',     value: hospital.beds     },
           { label: 'Doctors',  value: hospital.doctors  },
@@ -186,7 +186,7 @@ function SuperAdminHome() {
 
   return (
     <div className="space-y-6 page-enter">
-      <div className="flex items-start justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
           <h2 className="font-display text-2xl text-slate-900">Platform Overview</h2>
           <p className="text-slate-500 text-sm mt-1">Medinfera Health Platform · {stats.totalHospitals} hospitals registered</p>
@@ -206,7 +206,7 @@ function SuperAdminHome() {
       {/* Plan breakdown */}
       <div className="card">
         <h3 className="font-display text-base text-slate-900 mb-4">Subscription Breakdown</h3>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {stats.planBreakdown.map(({ plan, count }) => {
             const colors = { Enterprise: 'bg-violet-50 text-violet-700', Professional: 'bg-brand-50 text-brand-700', Starter: 'bg-slate-100 text-slate-600', Custom: 'bg-amber-50 text-amber-700' };
             return (
@@ -390,7 +390,7 @@ function PlatformAnalyticsPage() {
       {/* Plan distribution */}
       <div className="card animate-slide-up stagger-3">
         <h3 className="font-display text-base text-slate-900 mb-4">Subscription Plan Distribution</h3>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {stats.planBreakdown.map(({ plan, count }) => {
             const pct = stats.totalHospitals > 0 ? Math.round((count / stats.totalHospitals) * 100) : 0;
             const colors = { Enterprise: 'bg-violet-100 text-violet-700', Professional: 'bg-brand-100 text-brand-700', Starter: 'bg-slate-100 text-slate-600', Custom: 'bg-amber-100 text-amber-700' };
@@ -486,7 +486,7 @@ function SubscriptionPlansPage() {
       {/* Plan settings */}
       <div className="card animate-slide-up">
         <h3 className="font-display text-base text-slate-900 mb-5">Plan Configuration</h3>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {[
             { label: 'Trial Period', value: '14', unit: 'days' },
             { label: 'Grace Period (post-expiry)', value: '7', unit: 'days' },
@@ -553,7 +553,7 @@ function AuditLogsPage() {
       />
 
       {/* Summary */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
           { label: 'Critical Events', value: AUDIT_LOGS.filter((l) => l.severity === 'critical').length, bg: 'bg-red-50',   text: 'text-red-700'   },
           { label: 'Warnings',        value: AUDIT_LOGS.filter((l) => l.severity === 'warning').length,  bg: 'bg-amber-50', text: 'text-amber-700' },
